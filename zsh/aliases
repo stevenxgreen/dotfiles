@@ -6,5 +6,7 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
-alias sys76key='sudo sys76key.conf
+alias sys76key='sudo sys76key.conf'
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
 

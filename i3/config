@@ -131,7 +131,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 
 assign [class="firefox" instance="Navigator"] $web
-assign [class="URxvt" instance="urxvt"] $terms
+# assign [class="URxvt" instance="urxvt"] $terms
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $terms
