@@ -8,6 +8,10 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 
+bindkey -r '^l'
+bindkey -r '^g'
+bindkey -s '^g' clear-screen
+
 autoload -Uz compinit; compinit
 
 # autocomplete hidden files
@@ -43,5 +47,5 @@ fi
 
 if [ "$(tty)" = "/dev/tty1" ];
 then
-    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.initrc"
+    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
 fi
