@@ -1,5 +1,7 @@
 fpath=($ZDOTDIR/external $fpath)
 
+source /usr/share/LS_COLORS/dircolors.sh
+
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
 zmodload zsh/complist
@@ -10,7 +12,7 @@ bindkey -M menuselect 'l' vi-forward-char
 
 bindkey -r '^l'
 bindkey -r '^g'
-bindkey -s '^g' clear-screen
+bindkey -s '^g' clear
 
 autoload -Uz compinit; compinit
 
