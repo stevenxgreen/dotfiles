@@ -276,8 +276,8 @@ set_from_resource $white2 color15 #ffffff
 ##########
 # DESIGN #
 ##########
-# hide borders
-hide_edge_borders both
+
+ hide_edge_borders both
 # class                 border  backgr.     text        indicator   child_border
 client.focused          #333333 $black2     $white2     #285577
 client.focused_inactive #333333 $background $foreground #484e50
@@ -287,7 +287,7 @@ client.placeholder      #000000 #0c0c0c     $white2     #000000     #0c0c0c
 
 for_window [class="URxvt*"] border pixel 1
 
-# terminal scratchpad with tmux & two windows: 1.terminal | 2. neovim temp file
+## terminal scratchpad with tmux & two windows: 1.terminal | 2. neovim temp file
 for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
 exec urxvtc -name urxvt_scratchpad \

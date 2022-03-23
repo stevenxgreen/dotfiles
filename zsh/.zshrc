@@ -1,7 +1,6 @@
 fpath=($ZDOTDIR/external $fpath)
-
-source /usr/share/LS_COLORS/dircolors.sh
-
+. /usr/share/
+source "/usr/share/LS_COLORS/dircolors.sh"
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
 zmodload zsh/complist
@@ -39,8 +38,9 @@ zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/zsh/external/bd.zsh
+source $DOTFILES/zsh/external/bd.zsh
 source $DOTFILES/zsh/scripts.sh
+
 
 if [ $(command -v "fzf") ]; then
     source /usr/share/fzf/completion.zsh
