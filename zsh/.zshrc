@@ -1,5 +1,4 @@
 fpath=($ZDOTDIR/external $fpath)
-. /usr/share/
 source "/usr/share/LS_COLORS/dircolors.sh"
 source "$XDG_CONFIG_HOME/zsh/aliases"
 

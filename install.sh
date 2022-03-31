@@ -59,3 +59,9 @@ ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
 mkdir -p "$XDG_CONFIG_HOME"
 ln -sf "$DOTFILES/tmuxp" "$XDG_CONFIG_HOME/tmuxp"
 
+###########
+# neomutt #
+###########
+mkdir -p "$XDG_CONFIG_HOME/neomutt"
+ln -sf "$DOTFILES/neomutt/.neomuttrc" "$XDG_CONFIG_HOME/neomutt/.neomuttrc"
+    

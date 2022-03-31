@@ -7,7 +7,7 @@
 
 set $mod Mod4
 set $i3lockwall sh ~/.config/i3/scripts/lock.sh
-exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/archwave.png
+exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/archbtw.png
 exec --no-startup-id dunst
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -189,24 +189,31 @@ mode "resize" {
 focus_follows_mouse no
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    status_command i3status --config ~/.config/i3/i3status.conf
-    # disable all tray icons
-    tray_output none
-    # tray_output primary
-    colors {
-        background $black2
-        statusline $white2
-        separator $white2
 
-        #               border background text
-        focused_workspace   $background $background $red1
-        active_workspace    $black2 $black1 $white2
-        inactive_workspace  $black1 $black2 $foreground
-        urgent_workspace    $red1 $red2 $white2
-        binding_mode        $background $red2 $white2
+bar {
+    
+colors {
+        background #000000
+        statusline #ffffff
+        separator #666666
+
+        focused_workspace  #4c7899 #285577 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
     }
+    status_command i3status
+    
 }
+
+client.focused          #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+client.focused_inactive #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.unfocused        #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.urgent           #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.placeholder      #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.background       #2f343f
+
 
 
 
@@ -273,20 +280,6 @@ set_from_resource $cyan2 color14 #afd7ff
 set_from_resource $white1 color7 #4E4E4E
 set_from_resource $white2 color15 #ffffff
 
-##########
-# DESIGN #
-##########
-
- hide_edge_borders both
-# class                 border  backgr.     text        indicator   child_border
-client.focused          #333333 $black2     $white2     #285577
-client.focused_inactive #333333 $background $foreground #484e50
-client.unfocused        #333333 #222222     #888888     #292d2e     #222222
-client.urgent           $red1   $red1       $white2     $red1       $red1
-client.placeholder      #000000 #0c0c0c     $white2     #000000     #0c0c0c
-
-for_window [class="URxvt*"] border pixel 1
-
 ## terminal scratchpad with tmux & two windows: 1.terminal | 2. neovim temp file
 for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
@@ -299,3 +292,15 @@ attach-session -d -t scratchpad
 for_window [instance="htop_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
 exec urxvtc -name htop_scratchpad -e htop
+
+for_window [class=".*"] border pixel 4
+assign [class=URxvt] 1
+assign [class=Firefox|Transmission-gtk] 2
+assign [class=Thunar|File-roller] 3
+assign [class=Geany|Evince|Gucharmap|Soffice|libreoffice*] 4
+assign [class=Audacity|Vlc|mpv|Ghb|Xfburn|Gimp*|Inkscape] 5
+assign [class=Lxappearance|System-config-printer.py|Lxtask|GParted|Pavucontrol|Exo-helper*|Lxrandr|Arandr] 6
+for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
+for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
+for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
+
