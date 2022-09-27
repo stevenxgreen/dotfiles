@@ -16,4 +16,5 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+imap jj <Esc>
 
