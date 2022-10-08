@@ -63,3 +63,6 @@ URxvt*tabbedex.tab-bg: 236
 URxvt*tabbedex.transparent:true
 URxvt*tabbedex.new-button:false
 
+
+
+URxvt*font: xft:Inconsolata Nerd Font Mono:style=Medium:size=14:pixelsize=16:antialias=true
